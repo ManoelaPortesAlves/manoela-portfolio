@@ -7,7 +7,7 @@ type SectionHeadingProps = {
 
 export function SectionHeading({ eyebrow, id, title, description }: SectionHeadingProps) {
   return (
-    <div className="max-w-3xl">
+    <div className="max-w-4xl">
       {eyebrow ? (
         <p className="mb-3 text-sm font-medium uppercase tracking-[0.24em] text-cyan-300">
           {eyebrow}

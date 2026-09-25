@@ -5,8 +5,11 @@ type ProjectCardProps = {
 };
 
 export function ProjectCard({ project }: ProjectCardProps) {
+  const caseUrl = project.demoUrl ?? (project.slug ? `/projetos/${project.slug}` : project.repositoryUrl);
+  const isExternal = caseUrl?.startsWith("http");
+
   return (
-    <article className="flex h-full flex-col rounded-lg border border-white/10 bg-slate-950/70 p-6">
+    <article className="group flex h-full flex-col rounded-lg border border-white/10 bg-slate-950/70 p-6 transition-colors hover:border-cyan-300/35 hover:bg-white/[0.025]">
       <div className="flex flex-wrap items-center gap-3">
         <span className="rounded-md bg-cyan-300/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-cyan-200">
           {project.type}
@@ -36,7 +39,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           </ul>
         </div>
       ) : null}
-      <div className="mt-6 pt-6">
+      <div className="mt-6 border-t border-white/10 pt-6">
         <p className="text-sm font-semibold text-slate-100">Stack</p>
         <ul className="mt-3 flex flex-wrap gap-2">
           {project.stack.map((stackItem) => (
@@ -49,6 +52,16 @@ export function ProjectCard({ project }: ProjectCardProps) {
           ))}
         </ul>
       </div>
+      {caseUrl ? (
+        <a
+          href={caseUrl}
+          {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+          className="mt-auto inline-flex w-fit items-center gap-2 pt-7 text-sm font-semibold text-cyan-300 transition-colors hover:text-cyan-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-200"
+          aria-label={`Ver case: ${project.name}${isExternal ? " (abre em uma nova aba)" : ""}`}
+        >
+          Ver case <span aria-hidden="true">{isExternal ? "↗" : "→"}</span>
+        </a>
+      ) : null}
     </article>
   );
 }

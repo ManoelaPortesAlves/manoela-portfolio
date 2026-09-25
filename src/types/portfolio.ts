@@ -3,6 +3,7 @@ export type Experience = {
   role: string;
   period?: string;
   description: string;
+  highlights?: string[];
   technologies?: string[];
 };
 
@@ -13,6 +14,19 @@ export type Project = {
   responsibilities?: string[];
   stack: string[];
   status?: string;
+  slug?: string;
+  demoUrl?: string;
+  repositoryUrl?: string;
+};
+
+export type FocusArea = {
+  title: string;
+  details: string;
+};
+
+export type AboutIndicator = {
+  value: string;
+  label: string;
 };
 
 export type AiPractice = {
@@ -32,8 +46,10 @@ export type PortfolioData = {
     headline: string;
     description: string;
     githubUrl: string;
+    focusAreas: FocusArea[];
   };
   about: string[];
+  aboutIndicators: AboutIndicator[];
   experiences: Experience[];
   projects: Project[];
   ai: {

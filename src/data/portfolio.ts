@@ -9,11 +9,35 @@ export const portfolio: PortfolioData = {
     description:
       "Desenvolvo aplicações modernas, escaláveis e performáticas, conectando arquitetura front-end, experiência do usuário e inteligência artificial. Atuo da definição de padrões técnicos à entrega em produção, com foco em código sustentável, acessibilidade e qualidade.",
     githubUrl: "https://github.com/ManoelaPortesAlves",
+    focusAreas: [
+      {
+        title: "Front-end Architecture",
+        details: "React • Next.js • TypeScript",
+      },
+      {
+        title: "Design Systems",
+        details: "Components • Standards • UX",
+      },
+      {
+        title: "Engineering Quality",
+        details: "Performance • Testing • Accessibility",
+      },
+      {
+        title: "AI Engineering",
+        details: "Agents • MCP • Automation",
+      },
+    ],
   },
   about: [
     "Sou desenvolvedora Front-end com mais de 5 anos de experiência na construção e evolução de aplicações web. Minha atuação combina desenvolvimento, arquitetura e liderança técnica, principalmente com React, Next.js e TypeScript.",
     "Além da implementação de interfaces, trabalho com definição de padrões, Design Systems, integração com APIs, autenticação, code review, CI/CD e publicação de aplicações em cloud.",
     "Nos últimos projetos, também venho incorporando IA ao processo de desenvolvimento, utilizando agentes, MCP e automações para melhorar produtividade, qualidade e padronização das entregas.",
+  ],
+  aboutIndicators: [
+    { value: "5+ anos", label: "Experiência em Front-end" },
+    { value: "React / Next.js", label: "Stack principal" },
+    { value: "Tech Lead", label: "Arquitetura e padrões" },
+    { value: "IA", label: "Agents • MCP • Automação" },
   ],
   experiences: [
     {
@@ -22,6 +46,16 @@ export const portfolio: PortfolioData = {
       period: "2026 - atual",
       description:
         "Atuação na arquitetura e evolução de aplicações front-end corporativas utilizando React, Next.js e TypeScript. Responsável também por definição de padrões técnicos, Design Systems, code review, integração com APIs e autenticação, além de iniciativas relacionadas a CI/CD, cloud e adoção de IA no fluxo de desenvolvimento.",
+      highlights: [
+        "Arquitetura front-end",
+        "Definição de padrões técnicos",
+        "Design Systems",
+        "Code review",
+        "Integração com APIs",
+        "Autenticação",
+        "CI/CD e cloud",
+        "IA aplicada ao desenvolvimento",
+      ],
       technologies: [
         "React",
         "Next.js",

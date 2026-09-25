@@ -8,7 +8,11 @@ type ProjectsProps = {
 
 export function Projects({ projects }: ProjectsProps) {
   return (
-    <section id="projetos" className="px-6 py-16 sm:px-10 lg:px-16" aria-labelledby="projects-title">
+    <section
+      id="projetos"
+      className="px-6 py-16 sm:px-10 lg:px-16 lg:py-20"
+      aria-labelledby="projects-title"
+    >
       <div className="mx-auto max-w-7xl">
         <SectionHeading eyebrow="Portfólio" id="projects-title" title="Projetos & Cases" />
         <div className="mt-10 grid gap-5 lg:grid-cols-3">
