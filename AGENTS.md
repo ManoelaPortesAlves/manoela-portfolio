@@ -1,3 +1,13 @@
+- Use TypeScript.
+- Use React functional components.
+- Prefer Server Components.
+- Use Client Components only when necessary.
+- Follow accessibility best practices.
+- Keep components reusable.
+- Use Tailwind CSS.
+- Keep business data separated from UI components.
+- Avoid unnecessary dependencies.
+
 <!-- BEGIN:nextjs-agent-rules -->
 
 # This is NOT the Next.js you know
