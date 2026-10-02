@@ -17,7 +17,7 @@ export function Projects({ projects }: ProjectsProps) {
         <SectionHeading eyebrow="Portfólio" id="projects-title" title="Projetos & Cases" />
         <div className="mt-10 grid gap-5 lg:grid-cols-3">
           {projects.map((project) => (
-            <ProjectCard key={project.name} project={project} />
+            <ProjectCard key={project.title} project={project} />
           ))}
         </div>
       </div>

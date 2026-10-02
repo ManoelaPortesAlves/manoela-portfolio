@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Project } from "@/types/portfolio";
 
 type ProjectCardProps = {
@@ -5,8 +6,7 @@ type ProjectCardProps = {
 };
 
 export function ProjectCard({ project }: ProjectCardProps) {
-  const caseUrl = project.demoUrl ?? (project.slug ? `/projetos/${project.slug}` : project.repositoryUrl);
-  const isExternal = caseUrl?.startsWith("http");
+  const caseUrl = project.slug ? `/projetos/${project.slug}` : undefined;
 
   return (
     <article className="group flex h-full flex-col rounded-lg border border-white/10 bg-slate-950/70 p-6 transition-colors hover:border-cyan-300/35 hover:bg-white/[0.025]">
@@ -21,7 +21,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
         ) : null}
       </div>
       <h3 className="mt-5 text-2xl font-semibold tracking-tight text-white">
-        {project.name}
+        {project.title}
       </h3>
       <p className="mt-4 text-base leading-8 text-slate-300">{project.description}</p>
       {project.responsibilities?.length ? (
@@ -53,14 +53,13 @@ export function ProjectCard({ project }: ProjectCardProps) {
         </ul>
       </div>
       {caseUrl ? (
-        <a
+        <Link
           href={caseUrl}
-          {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
           className="mt-auto inline-flex w-fit items-center gap-2 pt-7 text-sm font-semibold text-cyan-300 transition-colors hover:text-cyan-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-200"
-          aria-label={`Ver case: ${project.name}${isExternal ? " (abre em uma nova aba)" : ""}`}
+          aria-label={`Ver case: ${project.title}`}
         >
-          Ver case <span aria-hidden="true">{isExternal ? "↗" : "→"}</span>
-        </a>
+          Ver case <span aria-hidden="true">→</span>
+        </Link>
       ) : null}
     </article>
   );

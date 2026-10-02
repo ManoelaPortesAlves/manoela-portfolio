@@ -8,16 +8,50 @@ export type Experience = {
 };
 
 export type Project = {
-  name: string;
+  title: string;
   type: string;
   description: string;
+  shortDescription?: string;
   responsibilities?: string[];
   stack: string[];
   status?: string;
   slug?: string;
+  overview?: string;
+  problem?: string[];
+  solution?: string[];
+  flow?: string[];
+  caseResponsibilities?: string[];
+  technicalChallenges?: ProjectChallenge[];
+  architecture?: string[];
+  decisions?: string[];
+  learnings?: string;
+  seoDescription?: string;
   demoUrl?: string;
   repositoryUrl?: string;
 };
+
+export type ProjectChallenge = {
+  title: string;
+  description: string;
+};
+
+export type ProjectCase = Project &
+  Required<
+    Pick<
+      Project,
+      | "slug"
+      | "overview"
+      | "problem"
+      | "solution"
+      | "flow"
+      | "caseResponsibilities"
+      | "technicalChallenges"
+      | "architecture"
+      | "decisions"
+      | "learnings"
+      | "seoDescription"
+    >
+  >;
 
 export type FocusArea = {
   title: string;
